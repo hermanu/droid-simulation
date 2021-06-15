@@ -32,7 +32,7 @@ Para determinar cual es el siguiente punto a destruir, deben de **tenerse en cue
   - _assist-allies_ : Deberan de priorizarse los puntos en los que exista algún aliado.
   - _avoid-crossfire_ : No debe de atacarse ningún punto en el que haya algún aliado.
   - _prioritize-mech_ : Debe de atacarse unm ech si se encuentra. En caso negativo, cualquier otro tipo deobjetivo será válido.
-  - _avoid-mech_ : No debe de atacarse ningún enemigo del tipom ech
+  - _avoid-mech_ : No debe de atacarse ningún enemigo del tipo mech
 
 Es importante denotar que **podrán proporcionarse varios protocolos** en la petición. A modo de ejemplo, si recibiésemos los protocolos _closest-enemies_ y _assist-allies_, deberíamos buscar el punto más cercano que tuviese aliados presentes.
 

@@ -8,11 +8,10 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",
-    "dev": "NODE_ENV=development ts-node ."
+    "dev": "NODE_ENV=development nodemon"
   },
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -28,5 +27,15 @@
     "nodemon": "^2.0.7",
     "tslint": "^6.1.3",
     "typescript": "^4.3.2"
+  },
+  "nodemonConfig": {
+    "ext": "ts js json",
+    "watch": [
+      "src/**/*.ts"
+    ],
+    "ignore": [
+      "src/**/*.spec.ts"
+    ],
+    "exec": "ts-node ./src/Server.ts"
   }
 }

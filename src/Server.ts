@@ -5,6 +5,7 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 
+
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const app = express();
@@ -16,8 +17,9 @@ process.env.NODE_ENV === "development"
 
 app.use(cors());
 app.use(helmet());
+app.use(express.json())
 
-//Error handler
+// Error handler
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   return res.status(res.statusCode).json({
     error: err.message,
