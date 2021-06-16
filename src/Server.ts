@@ -5,6 +5,8 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 
+import Droid from "./controllers/Droid"
+
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -33,8 +35,9 @@ app.get("/", async (req: Request, res: Response, next: NextFunction) => {
 
 // Placeholder response
 app.post("/radar", async (req: Request, res: Response, next: NextFunction) => {
-  const validResponse = { x: 0, y: 40 };
-  res.status(200).json(validResponse);
+  const response = new Droid().nextPosition(req.body.protocols, req.body.scan);
+  // const response = { x: 0, y: 40 };
+  res.status(200).json(response);
 });
 
 app.listen(process.env.PORT, () => {
